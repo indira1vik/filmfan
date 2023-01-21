@@ -17,7 +17,7 @@ function App() {
 
   const getMovieRequest = async (findmovie) => {
     const url = `http://www.omdbapi.com/?s=${findmovie}&apikey=73d3e819`;
-    const response = await fetch(url);
+    const response = await fetch(url,{referrerPolicy:"unsafe_url"});
     const responseJson = await response.json();
     if (responseJson.Search) {
       console.log(responseJson.Search);
