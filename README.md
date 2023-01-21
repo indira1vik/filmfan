@@ -1,11 +1,11 @@
 # The FilmFans Website
 
-This project is made with the help of IMDb Api. [IMDb](https://www.imdb.com/).
+This project : [The FilmFan Website](https://indira1vik.github.io/filmfan/).
 
 ## Use the website
 
 In the project directory, you can run:
-Open [FilmFans Website](http://localhost:3000) to view it in my browser.
+Open [FilmFans Website](https://indira1vik.github.io/filmfan/) to view it in my browser.
 
 **You can also download the zip file try using it.**
 
