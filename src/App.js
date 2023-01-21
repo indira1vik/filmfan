@@ -17,7 +17,7 @@ function App() {
 
   const getMovieRequest = async (findmovie) => {
     const url = `https://www.omdbapi.com/?s=${findmovie}&apikey=73d3e819`;
-    const response = await fetch(url,{referrerPolicy:"unsafe_url"});
+    const response = await fetch(url);
     const responseJson = await response.json();
     if (responseJson.Search) {
       console.log(responseJson.Search);
@@ -83,7 +83,7 @@ function App() {
       <MovieList movies={movieslist} handleFavclick={addFav} />
       <Trending />
       <div className="text-center mb-5">
-      <button type="button" id="myBtn" class="btn btn-dark px-4" onClick={topFunction}>
+      <button type="button" id="myBtn" className="btn btn-dark px-4" onClick={topFunction}>
         Top
       </button>
       </div>
