@@ -16,7 +16,7 @@ function App() {
   const [fav, setFav] = useState([]);
 
   const getMovieRequest = async (findmovie) => {
-    const url = `http://www.omdbapi.com/?s=${findmovie}&apikey=73d3e819`;
+    const url = `https://www.omdbapi.com/?s=${findmovie}&apikey=73d3e819`;
     const response = await fetch(url,{referrerPolicy:"unsafe_url"});
     const responseJson = await response.json();
     if (responseJson.Search) {
