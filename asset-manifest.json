@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/filmfan/static/css/main.dc1e0e7b.css",
+    "main.js": "/filmfan/static/js/main.f0ae004b.js",
+    "static/js/787.611da70f.chunk.js": "/filmfan/static/js/787.611da70f.chunk.js",
+    "index.html": "/filmfan/index.html",
+    "main.dc1e0e7b.css.map": "/filmfan/static/css/main.dc1e0e7b.css.map",
+    "main.f0ae004b.js.map": "/filmfan/static/js/main.f0ae004b.js.map",
+    "787.611da70f.chunk.js.map": "/filmfan/static/js/787.611da70f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc1e0e7b.css",
+    "static/js/main.f0ae004b.js"
+  ]
+}
