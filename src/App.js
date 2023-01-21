@@ -49,7 +49,7 @@ function App() {
   };
 
   const addFav = (movie) => {
-    const newlist = [...fav, movie];
+    const newlist = ([...fav, movie]);
     setFav(newlist);
     saveTolocal(newlist);
   };
