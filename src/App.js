@@ -49,10 +49,15 @@ function App() {
   };
 
   const addFav = (movie) => {
-    // if (fav)
-    // const newlist = ([...fav, movie]);
-    setFav((fav) => [...fav,movie]);
-    saveTolocal(fav);
+    if (fav.length > 0) {
+      const newlist = [...fav, movie];
+      setFav(newlist);
+      saveTolocal(newlist);
+    } else {
+      fav.push(movie);
+      // setFav(fav);
+      saveTolocal(fav);
+    }
   };
 
   const clearList = () => {
@@ -80,13 +85,18 @@ function App() {
         submitHandler={submitHandler}
         clearIt={clearList}
       />
-      
+
       <MovieList movies={movieslist} handleFavclick={addFav} />
       <Trending />
       <div className="text-center mb-5">
-      <button type="button" id="myBtn" className="btn btn-dark px-4" onClick={topFunction}>
-        Top
-      </button>
+        <button
+          type="button"
+          id="myBtn"
+          className="btn btn-dark px-4"
+          onClick={topFunction}
+        >
+          Top
+        </button>
       </div>
       <WatchList fav={fav} removeIt={removeFav} />
       <Genre />
