@@ -49,15 +49,9 @@ function App() {
   };
 
   const addFav = (movie) => {
-    if (fav.length > 0) {
-      const newlist = [...fav, movie];
-      setFav(newlist);
-      saveTolocal(newlist);
-    } else {
-      fav.push(movie);
-      // setFav(fav);
-      saveTolocal(fav);
-    }
+    const newlist = [...fav, movie];
+    setFav(newlist);
+    saveTolocal(newlist);
   };
 
   const clearList = () => {
