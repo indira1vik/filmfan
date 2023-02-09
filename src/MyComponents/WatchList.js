@@ -1,31 +1,34 @@
 import React from "react";
+import "../App.css";
 
 export const WatchList = (props) => {
   return (
     <>
-      <div className="boxcontain">
+      {/* <div className="boxcontain">
         <h3 className="container px-0">Your Watchlist</h3>
         <div className="container scrolling-wrapper mb-5 p-0">
-          {props.fav &&
-            props.fav.map((movie, index) => (
-              <div className="card" key={index}>
+          
+        </div>
+      </div> */}
+
+      <div className="container my-5">
+        {props.favlist &&
+          props.favlist.map((movie, index) => (
+            <div className="onecard" key={index}>
+              <div>
                 <img
-                  className="eachimage1"
+                  className="eachimage"
                   src={movie.Poster}
                   alt="Movie/Series Poster Not Available"
                 />
-                <div className="text-center p-0">
-                  <button
-                    type="button"
-                    onClick={() => props.removeIt(movie)}
-                    className="btn btn-outline-danger mb-3"
-                  >
-                    Watched it
-                  </button>
-                </div>
               </div>
-            ))}
-        </div>
+              <div className="p-4">
+                <h4>{movie.Title}</h4>
+                <div>Type : {movie.Type.toUpperCase()}</div>
+                <div>Year : {movie.Year}</div>
+              </div>
+            </div>
+          ))}
       </div>
     </>
   );

@@ -19,13 +19,13 @@ export const MovieList = (props) => {
                 <h4>{movie.Title}</h4>
                 <div>Type : {movie.Type.toUpperCase()}</div>
                 <div>Year : {movie.Year}</div>
-                <button
+                {/* <button
                   type="button"
                   onClick={() => props.handleFavclick(movie)}
                   className="btn btn-outline-primary mt-4"
                 >
                   Add to Watchlist
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

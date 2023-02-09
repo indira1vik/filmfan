@@ -8,19 +8,19 @@ import { Trending } from "./MyComponents/Trending";
 import { WatchList } from "./MyComponents/WatchList";
 import { Genre } from "./MyComponents/Genre";
 import { Bolly } from "./MyComponents/Bolly";
+import trend from "./Trend.json";
 
 function App() {
   const [findmovie, setFindmovie] = useState("");
   const [onlysubmit, setOnlysubmit] = useState("");
   const [movieslist, setMovieslist] = useState([]);
-  const [fav, setFav] = useState([]);
+  const [favlist, setFavlist] = useState([{}]);
 
   const getMovieRequest = async (findmovie) => {
     const url = `https://www.omdbapi.com/?s=${findmovie}&apikey=73d3e819`;
     const response = await fetch(url);
     const responseJson = await response.json();
     if (responseJson.Search) {
-      console.log(responseJson.Search);
       setMovieslist(responseJson.Search);
       setFindmovie("");
     }
@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     const movFav = JSON.parse(localStorage.getItem("FilmFans-Fav"));
-    setFav(movFav);
+    setFavlist(movFav);
   }, []);
 
   const saveTolocal = (items) => {
@@ -49,18 +49,23 @@ function App() {
   };
 
   const addFav = (movie) => {
-    const newlist = [...fav, movie];
-    setFav(newlist);
+    const newlist = { ...favlist, movie };
+    console.log(favlist);
+    setFavlist(newlist);
     saveTolocal(newlist);
   };
+
+  //error here
 
   const clearList = () => {
     setMovieslist([]);
   };
 
   const removeFav = (movie) => {
-    const newList = fav.filter((favorite) => favorite.imdbID !== movie.imdbID);
-    setFav(newList);
+    const newList = favlist.filter(
+      (favorite) => favorite.imdbID !== movie.imdbID
+    );
+    setFavlist(newList);
     saveTolocal(newList);
   };
 
@@ -92,7 +97,7 @@ function App() {
           Top
         </button>
       </div>
-      <WatchList fav={fav} removeIt={removeFav} />
+      {/* <WatchList favlist={favlist} removeIt={removeFav} /> */}
       <Genre />
       <Bolly />
       <Footer />
